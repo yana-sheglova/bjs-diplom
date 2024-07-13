@@ -2,33 +2,6 @@
 
 // Страница «Вход и регистрация»:
 
-class UserForm {
-	constructor() {
-		this.loginFormCallback = null;
-		this.registerFormCallback = null;
-	};
-
-	setLoginErrorMessage(message) {
-		this.loginErrorMessage = message;
-	};
-
-	setRegisterErrorMessage(message) {
-		this.registerErrorMessage = message;
-	};
-
-	loginFormAction() {
-		// Обработчик события сабмита формы авторизации
-	};
-
-	registerFormAction() {
-		// Обработчик события сабмита формы регистрации
-	};
-
-	getData(form) {
-		return form.elements;
-	};
-};
-
 const userForm = new UserForm();
 userForm.loginFormCallback = function(data) {
 	ApiConnector.login(data, response => {
@@ -37,7 +10,8 @@ userForm.loginFormCallback = function(data) {
 		if (response.success) {
 			location.reload();
 		} else {
-			userForm.setLoginErrorMessage('Ошибка авторизации');
+			console.log(response.error);
+			userForm.setLoginErrorMessage(response.error);
 		};
 	});
 };
@@ -49,7 +23,8 @@ userForm.registerFormCallback = function(data) {
 		if (response.success) {
 			location.reload();
 		} else {
-			userForm.setRegisterErrorMessage('Ошибка регистрации');
+			console.log(response.error);
+			userForm.setRegisterErrorMessage(response.error);
 		};
 	});
 };
