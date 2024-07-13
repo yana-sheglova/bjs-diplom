@@ -1,13 +1,4 @@
 // Выход из личного кабинета
-class LogoutButton {
-	constructor() {
-		this.action = null;
-	};
-
-	logoutClick() {
-		// обработчик события клика по кнопке
-	};
-};
 
 const logoutButton = new LogoutButton();
 
@@ -35,19 +26,6 @@ ApiConnector.current(response => {
 });
 
 // Получение текущих курсов валюты
-class RatesBoard {
-	constructor() {
-		this.table = [];
-	};
-
-	fillTable(data) {
-		// принимает объект и заполняет таблицу данными
-	};
-
-	clearTable() {
-		// очищает таблицу
-	};
-};
 
 const ratesBoard = new RatesBoard();
 
@@ -67,34 +45,6 @@ updateRates();
 setInterval(updateRates, 60000);
 
 // Операции с деньгами
-
-class MoneyManager {
-	constructor() {
-		this.addMoneyCallback = null;
-		this.conversionMoneyCallback = null;
-		this.sendMoneyCallback = null;
-	};
-
-	addMoneyAction() {
-		// обработчик события отправки формы добавления денег
-	};
-
-	conversionMoneyAction() {
-		// обработчик события отправки формы конвертации денег
-	};
-
-	sendMoneyAction() {
-		// обработчик события отправки формы перевода денег
-	};
-
-	setMessage(isSuccess, message) {
-		// метод отображает сообщение (ошибку или успешность) в окне с информацией
-	};
-
-	updateUsersList(data) {
-		// обновляет выпадающий список пользователей
-	};
-};
 
 const moneyManager = new MoneyManager();
 
@@ -138,27 +88,6 @@ moneyManager.sendMoneyCallback = function(data) {
 };
 
 // Работа с избранным
-class FavoritesWidget {
-	constructor() {
-
-	};
-
-	fillTable(data) {
-		// принимает объект и заполняет таблицу данными
-	};
-
-	clearTable() {
-		// очищает таблицу
-	};
-
-	getData() {
-		// метод получения данных из формы добавления пользователя
-	};
-
-	setMessage(isSuccess, message) {
-		// метод отображает сообщение (ошибку или успешность) в окне с информацией
-	};
-};
 
 const favoritesWidget = new FavoritesWidget();
 
