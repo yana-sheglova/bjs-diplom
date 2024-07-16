@@ -19,7 +19,7 @@ ApiConnector.current(response => {
 	console.log(response);
 
 	if (response.success) {
-		ProfileWidget.showProfile(data);
+		ProfileWidget.showProfile(response.data);
 	} else {
 		console.error('Current user info failed: ', response.error);
 	};
@@ -35,7 +35,7 @@ function updateRates() {
 
 		if (response.success) {
 			ratesBoard.clearTable();
-			ratesBoard.fillTable(data);
+			ratesBoard.fillTable(response.data);
 		} else {
 			console.error('Failed to get exchange rates: ', response.error);
 		};
@@ -98,7 +98,7 @@ function updateFavorites() {
 		if (response.success) {
 			favoritesWidget.clearTable();
 			favoritesWidget.fillTable(response.data);
-			favoritesWidget.updateUsersList(response.data);
+			moneyManager.updateUsersList(response.data);
 		} else {
 			console.error(response.error);
 			favoritesWidget.setMessage(false, response.error);
